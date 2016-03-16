@@ -1,0 +1,36 @@
+<div class="mainContainer container" ng-controller="MainController as MC">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+  <div class="col-md-2" id="signUp">
+    <a href="#">Sign Up</a>
+  </div>
+  <div class="col-md-6">
+    <p class="subtitle">Discover everything you want to know about a destination, all in one place.</p>
+    <!-- <p class="subtitle">More about looking, less about booking.</p> -->
+  </div>
+  <div class="col-md-2" id="logIn">
+    <a href="#">Log In</a>
+  </div>
+  <div class="col-md-1">
+  </div>
+
+</div>
+<div class="col-md-4 col-md-offset-4">
+  <div class="row" id="mainLogo">
+    TripStart
+  </div>
+
+  <div class="row">
+    <div class="mainForm">
+      <form ng-submit="MC.submitForm(MC.searchTerm)">
+      <input type="text" class="form-control" ng-model="MC.searchTerm" id="mainSearch" placeholder="      Enter a city and country to get started.    (ex. Porto, Portugal)">
+      <center>
+      <a href="#/result"><button id="mainSearchButton" type="submit" name="button" ng-submit="MC.submitForm(MC.searchTerm)">Search</button></a>
+    </form>
+    </center>
+    </div>
+  </div>
+</div>
+<div class="sunGlow" style="overflow-x: hidden; overflow-y: hidden; opacity: 1; "></div>
+</div>
