@@ -3,7 +3,7 @@ angular.module("app")
   .controller('ResultController', ['search','getCoordinates','$http', ResultController])
   .controller('UserController', ['userSaves','search','$http', UserController]);
 
-    function MainController(search, skyscannerWidgets) {
+    function MainController(search) {
     var main = this;
     main.search = search;
 
@@ -38,7 +38,7 @@ angular.module("app")
         flights.draw(document.getElementById("flights_search"));
         hotels.draw(document.getElementById("hotels_search"))
     }
-    skyscanner.setOnLoadCallback(result.main);
+    skyscanner.setOnLoadCallback(main);
     //END SKYSCANNER WIDGET
 
     // PARSING THE SEARCH TEARMS
