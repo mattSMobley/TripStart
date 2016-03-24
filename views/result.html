@@ -1,9 +1,13 @@
-<div class="resultContainer container" ng-controller="ResultController as RC">
+<div class="resultContainer container">
+
   <div class="col-md-12">
+    <div class="row">
+      <center>
+        <h3><a href="#/" class="resultTopLinks">Home</a> | <a href="#/user" class="resultTopLinks">Favorites</a></h3>
+      </center>
+    </div>
     <!-- LEFT COLUMN -->
     <div class="col-md-3">
-      <div class="row spacer">
-      </div>
       <div class="row spacer">
       </div>
       <div class="row">
@@ -13,46 +17,47 @@
       </div>
       <div class="row">
         <center>
-        <div class="box">
-
-        </div>
+          <div>
+            <iframe width="100%" height="250" frameborder="0" style="border:0;" ng-src='https://www.google.com/maps/embed/v1/search?key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I&zoom=10&q=Points+of+Interest+Nice+France' allowfullscreen>
+            </iframe>
+          </div>
       </center>
       </div>
       <div class="row spacer">
       </div>
       <div class="row">
         <center>
-          <p class="infoSection" id="lodging">Lodging</p>
+          <p class="infoSection" id="lodging">Hotels</p>
         </center>
       </div>
       <div class="row">
         <center>
-        <div class="box">
-
-        </div>
+          <div id="hotels_search" style="width: auto; height:auto;"></div>
       </center>
       </div>
 
     </div>
+    <!-- MID COLUMN -->
     <div class="col-md-6">
       <div class="row" id="resultTitle">
-        Porto, Portugal
+        <center>
+        {{ result.search.city }}, {{ result.search.country }}
+      </center>
       </div>
       <div class="row">
-        <iframe width="100%" height="400" frameborder="0" style="border:0; opacity: .5" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I&q=Porto+Portugal" allowfullscreen>
-        </iframe>
+      <div id="photoset" width="100%" class="img-responsive"></div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 populationBox">
 
             <div class="row">
-                <p class="infoSection">Pop: 211,309</p>
+                <p class="infoSection">Pop: 344,309</p>
             </div>
             <div class="row">
               <p class="infoSection">Founded: 1189</p>
             </div>
             <div class="row">
-                <p class="infoSection">Language: Portuguese</p>
+                <p class="infoSection">Language: France</p>
             </div>
 
         </div>
@@ -71,22 +76,20 @@
         </div>
       </div>
     </div>
+    <!-- RIGHT COLUMN -->
     <div class="col-md-3">
-      <div class="row spacer">
-      </div>
       <div class="row spacer">
       </div>
       <div class="row">
         <center>
-          <p class="infoSection" id="pictures">Pictures</p>
+          <p class="infoSection" id="pictures">Map</p>
         </center>
       </div>
       <div class="row">
         <center>
         <div>
-          <iframe
-       src="http://www.panoramio.com/wapi/template/photo.html?tag=Porto+Portugal&amp;width=300&amp;height=250"
-       frameborder="0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" > </iframe>
+          <iframe width="100%" height="250" frameborder="0" style="border:0;" ng-src='https://www.google.com/maps/embed/v1/search?key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I&maptype=satellite&zoom=5&q=Nice+France' allowfullscreen>
+          </iframe>
         </div>
       </center>
       </div>
@@ -97,84 +100,17 @@
       </div>
       <div class="row">
         <center>
-          <p class="infoSection" id="flights">Travel</p>
+          <p class="infoSection" id="flights">Flights</p>
         </center>
       </div>
       <div class="row img-responsive" style="padding-left: 1.5em;">
         <!-- <div class="box"> -->
 
-<script type="text/javascript">
- skyscanner.load("snippets","2");
- function main(){
-     var snippet = new skyscanner.snippets.SearchPanelControl();
-     snippet.setShape("box300x250");
-     snippet.setCulture("en-GB");
-     snippet.setCurrency("USD");
-     snippet.setColourScheme("classicbluelight");
-     snippet.setProduct("flights","1");
-     snippet.setProduct("hotels","2");
-     snippet.setProduct("carhire","3");
-
-     snippet.draw(document.getElementById("snippet_searchpanel"));
- }
- skyscanner.setOnLoadCallback(main);
-</script>
-<div id="snippet_searchpanel" style="width: auto; height:auto;"></div>
+<div id="flights_search" style="width: auto; height:auto;"></div>
         <!-- </div> -->
       </div>
     </div>
   </div>
 </div>
-    <!-- <div class="col-md-4">
 
-    </div>
-    <div class="col-md-4">
-
-    </div>
-
-  </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4" id="resultTitle">
-      Porto, Portugal
-    </div>
-    <div class="col-md-4">
-      <center>
-        <p class="infoSection" id="pictures">Pictures</p>
-
-      <iframe
-   src="http://www.panoramio.com/wapi/template/photo.html?tag=Porto+Portugal&amp;width=250&amp;height=250"
-   frameborder="0" width="250" height="250" scrolling="no" marginwidth="0" marginheight="0" > </iframe>
-   </center>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 img-responsive">
-
-    </div>
-    <div class="col-md-6 img-responsive">
-
-      <iframe width="100%" height="400" frameborder="0" style="border:0; opacity: .5" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I&q=Porto+Portugal" allowfullscreen>
-      </iframe>
-
-    </div>
-    <div class="col-md-3">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <center>
-        <p class="infoSection" id="lodging">Lodging</p>
-      </center>
-    </div>
-    <div class="col-md-4" >
-
-    </div>
-    <div class="col-md-4">
-      <center>
-        <p class="infoSection" id="flights">Flights</p>
-      </center>
-    </div> -->
 </div>

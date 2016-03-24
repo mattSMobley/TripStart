@@ -1,4 +1,4 @@
-<div class="mainContainer container" ng-controller="MainController as MC">
+<div class="mainContainer container">
   <div class="row">
     <div class="col-md-1">
     </div>
@@ -23,10 +23,10 @@
 
   <div class="row">
     <div class="mainForm">
-      <form ng-submit="MC.submitForm(MC.searchTerm)">
-      <input type="text" class="form-control" ng-model="MC.searchTerm" id="mainSearch" placeholder="      Enter a city and country to get started.    (ex. Porto, Portugal)">
+      <form>
+      <input type="text" class="form-control" ng-model="main.search.query" id="mainSearch" placeholder="      Enter a city and country to get started.    (ex. Porto, Portugal)">
       <center>
-      <a href="#/result"><button id="mainSearchButton" type="submit" name="button" ng-submit="MC.submitForm(MC.searchTerm)">Search</button></a>
+      <a href="#/result"><button id="mainSearchButton" type="submit" name="button" ng-click="result.getCoordinates()">Search</button></a>
     </form>
     </center>
     </div>

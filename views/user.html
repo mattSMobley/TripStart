@@ -1,3 +1,41 @@
-  <h1>
-    User's Saved Searches
-  </h1>
+<div class="userContainer container">
+  <div class="spacer">
+
+  </div>
+  <div class="col-md-12 userSaves">
+
+
+    <div class="row userHeading">
+      <div class="col-md-12">
+      <div class="col-md-10">
+      <h2>Welcome Back!</h2>
+        <h3>Here are the destinations you've saved:</h3>
+    </div>
+    <div class="col-md-2">
+      <h2><a href="#/" id="homeButton">Home</a></h2>
+    </div>
+  </div>
+    </div>
+    <div class="col-md-3">
+
+
+    </div>
+
+    <div class="col-md-6">
+
+
+      <h1>
+        <div class="row" ng-repeat="save in user.saves" id="saveRepeat">
+          <a href="#/result" ng-click="save.set('save.city,save.country')">{{save.city}}, {{save.country}}</a>
+        </div>
+
+      </h1>
+
+
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>

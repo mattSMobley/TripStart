@@ -96,7 +96,7 @@ p {
   text-align: center;
   margin-top: .5em;
   margin-bottom: .25em;
-  color: #BDBDBD;
+  color: orange;
 }
 .infoSection {
   color: #BDBDBD;
@@ -131,7 +131,7 @@ p {
    /*url('../img/manarola-edit.jpg');*/
   background-size: cover;
   border: #BDBDBD .8em solid;
-  border-radius: 2%;
+  /*border-radius: 2%;*/
   position: absolute;
   top: 0;
   left: 0;
@@ -140,14 +140,67 @@ p {
   overflow: hidden;
 }
 
-/* PANORAMIO API */
-
-#wapiblock .panoramio-wapi-images .panoramio-wapi-loading-img span {
-  padding-top: 50px;
+.resultTopLinks {
+  color: #95C2FC;
 }
-#pausebutton {
-  z-index: 100;
+
+.resultTopLinks:hover {
+  color: #95C2FC;
+}
+
+.populationBox {
+  padding-left: 7%;
+  padding-top: 3%;
+}
+
+/* USERS PAGE */
+.userContainer {
+  background-color: #1556AB;
+   /*url('../img/manarola-edit.jpg');*/
+  background-size: cover;
+  border: #BDBDBD .8em solid;
+  /*border-radius: 2%;*/
   position: absolute;
-  left: 9px;
-  top: 11px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.userSaves {
+  color: #BDBDBD;
+}
+.userSaves h1 {
+
+  color: orange;
+  text-align: center;
+  line-height: 2;
+}
+
+.userSaves a {
+  color: orange;
+  text-align: center;
+  line-height: 2;
+}
+
+#saveRepeate {
+  color: orange;
+
+}
+
+#homeButton {
+  float: right;
+  color: #BDBDBD;
+}
+
+#homeButton:hover {
+  text-decoration: underline;
+}
+
+
+/* PANORAMIO */
+
+#photoset {
+  width: 100%;
 }
