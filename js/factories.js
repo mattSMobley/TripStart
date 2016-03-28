@@ -1,6 +1,14 @@
-// angular.module("app")
-//   .factory('Search', function(){
-//     return {
-//       search:
-//     }
-//   })
+angular.module("app")
+  .factory("search", function(){
+    var formData = '';
+
+
+    return {
+      getData: function(){
+        return formData;
+      },
+      setData: function(newData){
+        formData = newData;
+      }
+    };
+  });

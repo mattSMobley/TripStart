@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -15,27 +15,28 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+  <!-- FAVICON -->
 
-  <link href='https://fonts.googleapis.com/css?family=Courgette|Merienda|Allura|Engagement|Devonshire' rel='stylesheet' type='text/css'>
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon.png">
+<!-- END FAVICONS -->
 
 <!--  PANORAMIO -->
 <script type="text/javascript" src="http://www.panoramio.com/wapi/wapi.js?v=1">
 </script>
 <!-- END PANORAMIO -->
 
-<!-- GOOGLE MAPS GEOCODE -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I"></script>
-<!-- END GEOCODE -->
 
 <!-- SKYSCANNER -->
 <script type="text/javascript" src="//api.skyscanner.net/api.ashx?key=0256ef32-986d-434e-9c5a-f577ef361e97"></script>
+
 <!-- END SKYSCANNER -->
 
 
 
 </head>
 
-<body>
+<body ng-app="app">
 
 
   <div ng-view>

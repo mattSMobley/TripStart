@@ -22,14 +22,12 @@
   </div>
 
   <div class="row">
-    <div class="mainForm">
-      <form>
-      <input type="text" class="form-control" ng-model="main.search.query" id="mainSearch" placeholder="      Enter a city and country to get started.    (ex. Porto, Portugal)">
+      <form name="searchForm" ng-submit="main.setData(main.search.formData)">
+      <input type="text" class="form-control" ng-model="main.search.formData" id="mainSearch" placeholder="      Enter a city and country to get started.    (ex. Porto, Portugal)">
       <center>
-      <a href="#/result"><button id="mainSearchButton" type="submit" name="button" ng-click="result.getCoordinates()">Search</button></a>
+      <button id="mainSearchButton" type="submit">Search</button>
     </form>
     </center>
-    </div>
   </div>
 </div>
 <div class="sunGlow" style="overflow-x: hidden; overflow-y: hidden; opacity: 1; "></div>

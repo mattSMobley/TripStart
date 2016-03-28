@@ -1,29 +1,9 @@
 angular.module("app")
-  .service("search", [search])
-  .service("getCoordinates", [getCoordinates])
-  .service("getFlights", [getFlights])
   .service("userSaves", ['$http', savesCatalog])
-  // .service("signInService", ['$http', signInService])
-  // .service("skyscannerWidgets", [skyscannerWidgets])
 
-    function search(){
-    var search = this;
-
-    search.query = '';
-
-    }
-
-    function getCoordinates(){
-
-    }
-    function getFlights(){
-
-    }
 
     function savesCatalog($http) {
       this.getSaves = getSaves;
-
-      // this.editBooks = editBooks;
 
       function getSaves() {
         return $http({
@@ -39,9 +19,3 @@ angular.module("app")
       }
 
     };
-
-    // function signinService ($http){
-    //   return function(playerObject) {
-    //     return $http.post('https://localhost:3000/signin', playerObject);
-    //   };
-    // }

@@ -1,9 +1,6 @@
 body {
   padding-top: 50px;
   font-family: "Gill Sans";
-  /*background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/sunset-edit.jpg');
-  background-size: cover;
-  overflow: hidden;*/
 }
 .mainContainer {
   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/sunset-edit.jpg');
@@ -19,9 +16,7 @@ p {
   font-size: 1.5em;
 }
 #mainLogo {
-  /*font-family: "Gill Sans";*/
   font-family: 'Courgette', cursive;
-  /*font-family: 'Merienda', cursive;*/
   font-size: 5.5em;
   text-align: center;
   padding-top: 1.35em;
@@ -37,7 +32,6 @@ p {
 #mainSearchButton {
   margin: 1em;
   font-family: 'Courgette', cursive;
-  /*font-family: 'Merienda', cursive;*/
   padding: .5em;
   color: white;
   background-color: #5DA3FC;
@@ -109,29 +103,11 @@ p {
   height: 18em;
   width: 85%;
 }
-/*#attractions {
-  padding-right: 4em;
-  padding-top: 3em;
-}
-#pictures {
-  padding-left: 4em;
-  padding-top: 3em;
-}
-#lodging {
-  padding-right: 4em;
-  margin-top: -6em;
-}
-#flights {
-  padding-left: 4em;
-  margin-top: -6em;
-}*/
+
 .resultContainer {
-  /*background-image: radial-gradient( rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.8)),*/
   background-color: #1556AB;
-   /*url('../img/manarola-edit.jpg');*/
   background-size: cover;
   border: #BDBDBD .8em solid;
-  /*border-radius: 2%;*/
   position: absolute;
   top: 0;
   left: 0;
@@ -152,6 +128,13 @@ p {
   padding-left: 7%;
   padding-top: 3%;
 }
+
+.tempBox {
+  padding-right: 3%;
+  padding-top: 3%;
+  text-align: right;
+}
+
 
 /* USERS PAGE */
 .userContainer {
