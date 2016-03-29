@@ -10,7 +10,6 @@ function MainController(search, weather) {
   main.setData = function() {
     main.search.setData();
     window.location = '#/result';
-    console.log(main.search.formData);
   }
 
   //AUTOCOMPLETE
@@ -51,7 +50,6 @@ function MainController(search, weather) {
         "http://gd.geobytes.com/GetCityDetails?callback=?&fqcn=" + cityfqcn,
         function(data) {
           var cityData = data;
-          console.log(cityData);
           main.search.formData = {
             city: cityData.geobytescity,
             country: cityData.geobytescountry,
@@ -62,7 +60,6 @@ function MainController(search, weather) {
             timezone: cityData.geobytestimezone,
             region: cityData.geobytesregion
           }
-          console.log(main.search.formData);
 
         }
       );
@@ -123,7 +120,9 @@ function ResultController(search, weatherService, airbnbService, $http) {
   //WEATHER
   var getWeather = result.weather.getCurrentWeather(result.search.formData.city)
     .then(function(response) {
+
     })
+
 
   result.weatherForecast = {
     // day1: {
@@ -179,13 +178,12 @@ function ResultController(search, weatherService, airbnbService, $http) {
         sunset: result.weather.forecast[4].astro.sunset
       };
 
-      console.log(result.weatherForecast.day1.min)
+      console.log(result.weatherForecast.day1.icon)
     });
   //Comes in as array of 7 objects 0-6, each one with 'astro' property that holds sunrise and sunset, 'day' property that has highs and lows
 
   //END WEATHER
 
-  console.log(parseFloat(result.search.formData.latitude));
   result.latParsed = parseFloat(result.search.formData.latitude);
   result.lonParsed = parseFloat(result.search.formData.longitude);
 
