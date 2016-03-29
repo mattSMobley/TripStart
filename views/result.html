@@ -1,4 +1,4 @@
-<div class="resultContainer container">
+    <div class="resultContainer container">
 
   <div class="col-md-12">
     <div class="row">
@@ -17,23 +17,71 @@
       </div>
       <div class="row">
         <center>
-          <div id="poi_map" class="img-responsive">
-            <iframe width="100%" height="250" frameborder="0" style="border:0;" ng-src='https://www.google.com/maps/embed/v1/search?key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I&zoom=10&q=Points+of+Interest+'+ result.city + '+' + result.country allowfullscreen>
-            </iframe>
-          </div>
+          <div id="map"></div>
       </center>
       </div>
       <div class="row spacer">
       </div>
       <div class="row">
         <center>
-          <p class="infoSection" id="lodging">Hotels</p>
+          <p class="infoSection" id="lodging">Forecast</p>
         </center>
       </div>
       <div class="row">
-        <center>
-          <div id="snippet_searchpanel2" style="width: auto; height:auto;"></div>
-      </center>
+
+          <div id="forecast">
+            <table>
+              <tr>
+                <th></th>
+                <th>LO</th>
+                <th>HI</th>
+                <th>Rain</th>
+                <th>Sunrise</th>
+                <th>Sunset</th>
+              </tr>
+              <tr>
+                <td><img ng-src={{ result.weatherForecast.day1.icon }}></td>
+                <td> {{result.weatherForecast.day1.min}}</td>
+                <td> {{result.weatherForecast.day1.max}}</td>
+                <td> {{result.weatherForecast.day1.rain}}</td>
+                <td> {{result.weatherForecast.day1.sunrise}}</td>
+                <td> {{result.weatherForecast.day1.sunset}}</td>
+              </tr>
+              <tr>
+                <td><img ng-src={{ result.weatherForecast.day1.icon }}></td>
+                <td> {{result.weatherForecast.day1.min}}</td>
+                <td> {{result.weatherForecast.day1.max}}</td>
+                <td> {{result.weatherForecast.day1.rain}}</td>
+                <td> {{result.weatherForecast.day1.sunrise}}</td>
+                <td> {{result.weatherForecast.day1.sunset}}</td>
+              </tr>
+              <tr>
+                <td><img ng-src={{ result.weatherForecast.day1.icon }}></td>
+                <td> {{result.weatherForecast.day1.min}}</td>
+                <td> {{result.weatherForecast.day1.max}}</td>
+                <td> {{result.weatherForecast.day1.rain}}</td>
+                <td> {{result.weatherForecast.day1.sunrise}}</td>
+                <td> {{result.weatherForecast.day1.sunset}}</td>
+              </tr>
+              <tr>
+                <td><img ng-src={{ result.weatherForecast.day1.icon }}></td>
+                <td> {{result.weatherForecast.day1.min}}</td>
+                <td> {{result.weatherForecast.day1.max}}</td>
+                <td> {{result.weatherForecast.day1.rain}}</td>
+                <td> {{result.weatherForecast.day1.sunrise}}</td>
+                <td> {{result.weatherForecast.day1.sunset}}</td>
+              </tr>
+              <tr>
+                <td><img ng-src={{ result.weatherForecast.day1.icon }}></td>
+                <td> {{result.weatherForecast.day1.min}}</td>
+                <td> {{result.weatherForecast.day1.max}}</td>
+                <td> {{result.weatherForecast.day1.rain}}</td>
+                <td> {{result.weatherForecast.day1.sunrise}}</td>
+                <td> {{result.weatherForecast.day1.sunset}}</td>
+              </tr>
+            </table>
+          </div>
+
       </div>
 
     </div>
@@ -41,7 +89,7 @@
     <div class="col-md-6">
       <div class="row" id="resultTitle">
         <center>
-        {{ result.city }}, {{ result.country}}
+        {{ result.search.formData.city }}, {{ result.search.formData.country}}
       </center>
       </div>
       <div class="row">
@@ -50,29 +98,30 @@
         </center>
       </div>
       <div class="row">
-        <div class="col-md-4 populationBox">
+        <div class="col-md-6 populationBox">
 
             <div class="row">
-                <p class="infoSection">Pop: 224,309</p>
+                <p class="infoSection">Currency:  {{ result.search.formData.currency }}</p>
             </div>
             <div class="row">
-              <p class="infoSection">Founded: 1189</p>
+              <p class="infoSection">Time Zone:  {{ result.search.formData.timezone }} GMT</p>
             </div>
             <div class="row">
-                <p class="infoSection">Language: Portugese</p>
+                <p class="infoSection">{{ result.search.formData.country }} Pop.:  {{ result.search.formData.countrypopulation | number}}</p>
             </div>
 
         </div>
-        <div class="col-md-8 tempBox">
+        <div class="col-md-6 tempBox">
             <div class="row">
-                <p class="infoSection">Average Temperature</p>
+              <p class="infoSection"> <img style="width: 2.5vw; height: 4.5vh; padding-bottom: .5vh;" ng-src={{result.weather.current.condition.icon}}> {{ result.weather.current.condition.text}} </p>
             </div>
             <div class="row">
-              <p class="infoSection">  J | F | M | A | M | J | J | A | S | O | N | D </p>
+              <p class="infoSection" id="weather">  Current Temp.: {{ result.weather.current.temp_f }}</p>
             </div>
         <div class="row">
-        <p class="infoSection">  43 | 32 | 53 | 45 | 66 | 77 | 79 | 83 | 75 | 72 </p>
+        <p class="infoSection">  Humidity: {{ result.weather.current.humidity }}% </p>
         </div>
+
         </div>
       </div>
     </div>
@@ -87,10 +136,7 @@
       </div>
       <div class="row">
         <center>
-        <div id="satelite_map" class="img-responsive">
-          <iframe width="100%" height="250" frameborder="0" style="border:0;" ng-src='https://www.google.com/maps/embed/v1/search?key=AIzaSyCd4yYuac4ot0nIp49HE9f_Sxy-tVKrD4I&maptype=satellite&zoom=5&q=Porto+Portugal' allowfullscreen>
-          </iframe>
-        </div>
+          <div id="satellite"></div>
       </center>
       </div>
       <!-- <div class="row spacer" style="padding: 1em;">
@@ -100,7 +146,7 @@
       </div>
       <div class="row">
         <center>
-          <p class="infoSection" id="flights">Flights</p>
+          <p class="infoSection" id="flights">Reservations</p>
         </center>
       </div>
       <div class="row img-responsive" style="padding-left: 1.5em;">

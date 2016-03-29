@@ -19,11 +19,11 @@ p {
   font-family: 'Courgette', cursive;
   font-size: 5.5em;
   text-align: center;
-  padding-top: 1.35em;
+  padding-top: 1em;
   color: #BDBDBD;
   font-weight: 600;
-  padding-bottom: 1em;
-  text-decoration-style: solid;
+  padding-bottom: .8em;
+  text-shadow: 2px 2px 2px #000000;
 }
 .subtitle {
   text-align: center;
@@ -44,6 +44,24 @@ p {
   border: 1px solid #878787;
   color: black;
 }
+/*GOOGLE MAPS*/
+#map {
+  height: 30vh;
+  width: 90%;
+}
+#satellite {
+  height: 30vh;
+  width: 90%;
+}
+/*END GOOGLE MAPS*/
+.ui-menu .ui-menu-item a,.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+	text-align:left;
+	font-size:14px;
+	}
+.ui-autocomplete-loading { background: white url("/images/ui-anim_basic_16x16.gif") right center no-repeat; }
+
 #signUp {
   text-align: left;
   color: #95C2FC;
@@ -86,10 +104,10 @@ p {
 /* RESULT PAGE */
 
 #resultTitle {
-  font-size: 5vw;
+  font-size: 4vw;
   text-align: center;
-  margin-top: .5em;
-  margin-bottom: .25em;
+  padding-top: .5em;
+  padding-bottom: .25em;
   color: orange;
 }
 .infoSection {
@@ -134,6 +152,21 @@ p {
   padding-top: 3%;
   text-align: right;
 }
+
+#forecast {
+  background-color: #BDBDBD;
+  height: 30vh;
+  border-radius: 5%;
+  width: 90%;
+}
+
+table{
+  text-align: justify;
+  height: 30vh;
+  width: 100%;
+  padding: 1vh 1vw;
+}
+
 
 
 /* USERS PAGE */

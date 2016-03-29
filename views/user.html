@@ -26,7 +26,7 @@
 
       <h1>
         <div class="row" ng-repeat="save in user.saves" id="saveRepeat">
-          <a href="#/result" ng-click="save.set('save.city,save.country')">{{save.city}}, {{save.country}}</a>
+          <a ng-click="user.setData(user.search.formData)">{{save.city}}, {{save.country}}</a>
         </div>
 
       </h1>
