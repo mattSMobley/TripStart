@@ -116,10 +116,10 @@
               <p class="infoSection"> <img style="width: 2.5vw; height: 4.5vh; padding-bottom: .5vh;" ng-src={{result.weather.current.condition.icon}}> {{ result.weather.current.condition.text}} </p>
             </div>
             <div class="row">
-              <p class="infoSection" id="weather">  Current Temp.: {{ result.weather.current.temp_f }}</p>
+              <p class="infoSection" id="weather">  {{ result.weather.current.temp_f }} °F</p>
             </div>
         <div class="row">
-        <p class="infoSection">  Humidity: {{ result.weather.current.humidity }}% </p>
+        <p class="infoSection">  {{ result.weather.current.humidity }}% Humidity</p>
         </div>
 
         </div>
@@ -153,7 +153,7 @@
         <!-- <div class="box"> -->
 <center>
 <!-- <div id="snippet_searchpanel" style="width: auto; height:auto;"></div> -->
- <iframe id="QuickTripWidget" allowTransparency="true" src="http://www.quicktrip.com/quicktrip-widget.html?Affiliate=48bdd172-f175-4aca-ab9f-079cbbd8f61a&Mode=flight&Culture=en-CA" width="310" height="250" scrolling="no" frameBorder="0" style="box-shadow: 2px 2px 4px black; border-radius: 5%"></iframe>
+ <iframe id="QuickTripWidget" allowTransparency="true" src="http://www.quicktrip.com/quicktrip-widget.html?Affiliate=48bdd172-f175-4aca-ab9f-079cbbd8f61a&Mode=flight&Culture=en-CA" width="308" height="250" scrolling="no" frameBorder="0" style="box-shadow: 2px 2px 4px black; border-radius: 5%; margin-left:0"></iframe>
 </center>
         <!-- </div> -->
       </div>
