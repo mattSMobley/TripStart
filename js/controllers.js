@@ -125,14 +125,6 @@ function ResultController(search, weatherService, airbnbService, $http) {
 
 
   result.weatherForecast = {
-    // day1: {
-    //   min: '',
-    //   max: '',
-    //   rain: '',
-    //   // icon: '',
-    //   sunrise: '',
-    //   sunset: ''
-    // }
   }
   var getForecast = result.weather.getForecastWeather(result.search.formData.city)
     .then(function(response){

@@ -48,10 +48,14 @@ p {
 #map {
   height: 30vh;
   width: 90%;
+  border-radius: 5%;
+  box-shadow: 2px 2px 4px black;
 }
 #satellite {
   height: 30vh;
   width: 90%;
+  border-radius: 5%;
+  box-shadow: 2px 2px 4px black;
 }
 /*END GOOGLE MAPS*/
 .ui-menu .ui-menu-item a,.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
@@ -158,6 +162,7 @@ p {
   height: 30vh;
   border-radius: 5%;
   width: 90%;
+  box-shadow: 2px 2px 4px black;
 }
 
 table{
@@ -219,4 +224,5 @@ table{
 
 #photoset {
   width: 100%;
+  border-radius: 5%;
 }
