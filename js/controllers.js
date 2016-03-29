@@ -211,8 +211,6 @@ function ResultController(search, weatherService, airbnbService, $http) {
 
   var currentCity = new google.maps.LatLng(result.latParsed, result.lonParsed);
 
-
-
   map = new google.maps.Map(document.getElementById('map'), {
     center: currentCity,
     zoom: 12
@@ -220,13 +218,14 @@ function ResultController(search, weatherService, airbnbService, $http) {
 
   var request = {
     location: currentCity,
-    radius: 10000,
-    type: ['point_of_interest']
+    radius: 20000,
+    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'stadium', 'shopping_mall', 'zoo', 'casino']
   };
   console.log(request);
 
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
+  // service.getDetails(detailsRequest, detailsCallback);
 }
 
 function callback(results, status) {
@@ -247,8 +246,9 @@ function callback(results, status) {
     });
     infoWindow = new google.maps.InfoWindow();
 
+
     google.maps.event.addListener(marker, 'mouseover', function() {
-      infoWindow.setContent(place.name + '<br/>' + place.vicinity + '<br/><img src="' + place.icon + '">');
+      infoWindow.setContent(place.name + '<br/>' + '<br/><img src="' + place.icon + '">');
       infoWindow.open(map, this);
     });
   }

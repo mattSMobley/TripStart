@@ -27,7 +27,6 @@ p {
 }
 .subtitle {
   text-align: center;
-  margin-top: 1.5em;
 }
 #mainSearchButton {
   margin: 1em;
@@ -66,24 +65,37 @@ p {
 	}
 .ui-autocomplete-loading { background: white url("/images/ui-anim_basic_16x16.gif") right center no-repeat; }
 
-#signUp {
-  text-align: left;
+#signUp a{
+  text-align: center;
   color: #95C2FC;
   font-size: 1.5em;
-  margin-top: 1.5em;
 }
 #signUp a:hover {
-  color: #BDBDBD;
+  color: white;
   text-decoration: none;
 }
-#logIn {
-  text-align: right;
+#logIn a{
+  text-align: center;
   color: #95C2FC;
   font-size: 1.5em;
-  margin-top: 1.5em;
 }
 #logIn a:hover {
-  color: #BDBDBD;
+  color: white;
+  text-decoration: none;
+}
+#instagram {
+  display: inline-block;
+  position: absolute;
+  top: 90%;
+  left: 41%;
+  font-size: 1em;
+}
+#instagram a {
+  color: #95C2FC;
+  font-size: 1em;
+}
+#instagram a:hover {
+  color: white;
   text-decoration: none;
 }
 .sunGlow {

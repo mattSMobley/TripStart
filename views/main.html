@@ -1,34 +1,49 @@
 <div class="mainContainer container">
+  <div class="spacer">
+  </div>
   <div class="row">
     <div class="col-md-1">
     </div>
-  <div class="col-md-2" id="signUp">
-    <a href="#">Sign Up</a>
-  </div>
-  <div class="col-md-6">
-    <p class="subtitle">Discover everything you want to know about a destination, all in one place.</p>
-    <!-- <p class="subtitle">More about looking, less about booking.</p> -->
-  </div>
-  <div class="col-md-2" id="logIn">
-    <a href="#">Log In</a>
-  </div>
-  <div class="col-md-1">
-  </div>
-
-</div>
-<div class="col-md-4 col-md-offset-4">
-  <div class="row" id="mainLogo">
-    TripStart
+    <div class="col-md-2" id="signUp">
+      <center><a href="#">Sign Up</a></center>
+    </div>
+    <div class="col-md-6">
+      <p class="subtitle">Discover everything you want to know about a destination, all in one place.</p>
+      <!-- <p class="subtitle">More about looking, less about booking.</p> -->
+    </div>
+    <div class="col-md-2" id="logIn">
+      <center><a href="#">Log In</a></center>
+    </div>
+    <div class="col-md-1">
+    </div>
   </div>
 
-  <div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="row" id="mainLogo">
+      TripStart
+    </div>
+
+    <div class="row">
       <form name="searchForm" ng-submit="main.setData(main.search.formData)">
-      <input type="text" class="form-control" ng-model="main.search.formData" id="mainSearch" placeholder=" Enter a city and country to get started.    (ex. Porto, Portugal)">
-      <center>
-      <button id="mainSearchButton" type="submit">Search</button>
-    </form>
-    </center>
+        <input type="text" class="form-control" ng-model="main.search.formData" id="mainSearch" placeholder=" Enter a city and country to get started.    (ex. Porto, Portugal)">
+        <center>
+          <button id="mainSearchButton" type="submit">Search</button>
+      </form>
+      </center>
+    </div>
   </div>
-</div>
-<div class="sunGlow" style="overflow-x: hidden; overflow-y: hidden; opacity: 1; "></div>
+  <center>
+  <div id="instagram">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-4">
+        <a href="https://www.instagram.com/tripstartideas/"><img src="http://vignette3.wikia.nocookie.net/carebears/images/b/b5/Instagram-logo-transparent-png-i11.png/revision/latest?cb=20140925232353" style="height: 3em; width 3em;  padding: 0em;"></a>
+      </div>
+      <div class="col-md-8" style="padding-left:1em;">
+        <a href="https://www.instagram.com/tripstartideas/">Follow Us For Ideas!</a>
+      </div>
+    </div>
+  </div>
+</center>
+
+  <!-- <div class="sunGlow" style="overflow-x: hidden; overflow-y: hidden; opacity: 1; "></div> -->
 </div>
