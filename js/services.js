@@ -1,11 +1,14 @@
 angular.module("app")
   .service("userSaves", ['$http', savesCatalog])
-  .service("airbnbService", ['$http', airbnb])
   .service("weatherService", ['$http', weather])
-  // .service("poiService", ['$http', poi])
+  .service("signUpService", ['$http', signUp])
+  .service("logInService", ['$http', logIn])
+
 
 function savesCatalog($http) {
   this.getSaves = getSaves;
+  this.addSave = addSave;
+  this.removeSave = removeSave;
 
   function getSaves() {
     return $http({
@@ -18,6 +21,20 @@ function savesCatalog($http) {
     }, function errorCallback(response) {
       console.log(response.data);
     })
+  }
+
+  function addSave(){
+    return function(newSave) {
+      console.log('adding a new save: ' + newSave);
+      return $http.post('http://localhost:3000/addSave', newSave);
+    };
+  }
+
+  function removeSave(){
+    return function(existingSave) {
+      console.log('adding a new save: ' + existingSave);
+      return $http.post('http://localhost:3000/removeSave', existingSave);
+    };
   }
 
 };
@@ -70,21 +87,19 @@ function weather($http) {
   }
 }
 
-// function poi($http) {
-//   var poi = this;
-//   poi.getPoi = getPoi;
-//   poi.points = {};
-//
-//   function getPoi(lat, lon) {
-//     return $http({
-//       method: 'GET',
-//       url: 'http://api.geonames.org/findNearbyPOIsOSMJSON?lat=' + lat + '&lng=' + lon + '&username=mattsmobley&radius=1'
-//     }).then(function successCallback(response) {
-//       poi.points = response;
-//       console.log(poi.points);
-//     }, function errorCallback(response) {
-//       console.log('getPOI did not work');
-//     })
-//   }
-//
-// }
+function signUp($http){
+  return function(newUserData) {
+    console.log('service was called for this player: ' + newUserData);
+    return $http.post('http://localhost:3000/signup', newUserData);
+  };
+}
+
+function logIn($http){
+  var logIn = this;
+  logIn.loggedIn = false;
+  logIn.logInInfo = {};
+  return function(userData) {
+    logIn.logInInfo = userData;
+    return $http.post('http://localhost:3000/login', userData);
+  };
+}

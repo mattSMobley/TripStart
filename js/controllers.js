@@ -1,16 +1,57 @@
 angular.module("app")
-  .controller('MainController', ['search', MainController])
-  .controller('ResultController', ['search', 'weatherService', 'airbnbService', '$http', ResultController])
-  .controller('UserController', ['userSaves', 'search', '$http', UserController]);
+  .controller('MainController', ['search', 'signUpService', 'logInService', MainController])
+  .controller('ResultController', ['search', 'weatherService', 'userSaves', 'logInService', '$http', ResultController])
+  .controller('UserController', ['userSaves', 'search', 'logInService', '$http', UserController]);
 
-function MainController(search, weather) {
+function MainController(search, signUpService, logInService) {
   var main = this;
   main.search = search;
-  main.weather = weather;
+  main.signUpInfo = {};
+  main.signUpService = signUpService;
+  main.logInService = logInService;
   main.setData = function() {
     main.search.setData();
     window.location = '#/result';
   }
+
+  //SIGN UP
+  main.modalShown = false;
+  main.toggleModal = function(){
+    main.modalShown = !main.modalShown;
+  };
+
+  main.signUp = function() {
+    main.signUpService(main.signUpInfo)
+    .then(function(insertResult){
+      main.signUpInfo.email = null;
+      main.signUpInfo.password = null;
+      main.toggleModal();
+      console.log(insertResult);
+    });
+  }
+  //END SIGN UP
+
+  //LOG IN
+
+  main.modal2Shown = false;
+  main.toggleModal2 = function(){
+    main.modal2Shown = !main.modal2Shown;
+  }
+  main.logIn = function() {
+    main.logInService(main.logInInfo)
+      .then(function(userData){
+        if (userData.data.email === main.logInInfo.email){
+          main.logInService.loggedIn = true;
+          main.logInService.logInInfo = main.logInInfo;
+          main.toggleModal2();
+          console.log(main.logInService.logInInfo);
+          console.log(main.logInService.loggedIn);
+        } else {
+          main.errorMessage = 'wrong username or password';
+        }
+      });
+  }
+
 
   //AUTOCOMPLETE
   jQuery(function() {
@@ -71,11 +112,19 @@ function MainController(search, weather) {
 
 
 
-function ResultController(search, weatherService, airbnbService, $http) {
+function ResultController(search, weatherService, userSaves, logInService, $http) {
   var result = this;
   result.search = search;
   result.weather = weatherService;
-  result.airbnb = airbnbService;
+  result.logInService = logInService;
+  console.log('Logged In?' + result.logInService.loggedIn);
+  console.log(result.logInService.logInInfo);
+
+  result.save = false;
+  result.toggleSave = function(){
+    result.save = !result.save
+  }
+
 
 
   //BEGIN PANORAMIO
@@ -98,7 +147,7 @@ function ResultController(search, weatherService, airbnbService, $http) {
 
 
   var myOptions = {
-    'width': 650,
+    'width': 600,
     'height': 400,
     'columns': 3,
     'rows': 2,
@@ -109,13 +158,6 @@ function ResultController(search, weatherService, airbnbService, $http) {
   photoset.setPosition(0);
   //END PANORAMIO
 
-
-  //AIRBNB
-  var getAirbnb = result.airbnb.getListings(result.search.formData.city, result.search.formData.country)
-    .then(function(data) {
-      result.listings = data;
-    })
-    //END AIRBNB
 
   //WEATHER
   var getWeather = result.weather.getCurrentWeather(result.search.formData.city)
@@ -219,7 +261,7 @@ function ResultController(search, weatherService, airbnbService, $http) {
   var request = {
     location: currentCity,
     radius: 20000,
-    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'stadium', 'shopping_mall', 'zoo', 'casino']
+    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino']
   };
   console.log(request);
 
@@ -269,25 +311,23 @@ function callback(results, status) {
   //END GOOGLE MAPS
 
 
-  //BEGIN POI CHECK - RETURNS FIREHYDRANTS AND JENNY CRAIG STORES
-  // var getPoi = result.poi.getPoi(result.search.formData.latitude, result.search.formData.longitude)
-  //   .then(function(response){
-  //     console.log(response);
-  //   })
-  //END POI
-
 }
 
 //END RESULTCONTROLLER
 
 
 //BEGIN USERCONTROLLER
-function UserController(userSaves, search) {
+function UserController(userSaves, search, logInService) {
   var user = this;
 
   user.saves = [];
   user.city = '';
   user.country = '';
+  user.logInService = logInService;
+  console.log('Logged in?' + user.logInService.loggedIn);
+  console.log(user.logInService.logInInfo.email);
+  console.log(user.logInService.logInInfo.password);
+
 
   var getSaves = userSaves.getSaves()
     .then(function(data) {

@@ -1,18 +1,56 @@
 <div class="mainContainer container">
   <div class="spacer">
   </div>
+  <modal-dialog show='main.modalShown' width='400px' height='60%'>
+    <p>Sign Up To Save Your Searches<p>
+      <br>
+      <form ng-submit="main.signUp()">
+        <div class="form-group">
+          <p>Email Address:</p>
+          <input type="email" name="emailAddress" class="form-control" id="emailAddress" placeholder="" ng-model="main.signUpInfo.email">
+
+        </div>
+        <div class="form-group">
+          <p>Password:</p>
+          <input type="password" name="password" class="form-control" id="password" placeholder="" ng-model="main.signUpInfo.password">
+
+        </div>
+        <center>
+        <button id="secondaryButton" type="submit">Submit</button>
+      </center>
+      </form>
+  </modal-dialog>
+  <modal-dialog show='main.modal2Shown' width='400px' height='60%'>
+    <p>Log In To Your Account<p>
+      <br>
+      <form ng-submit="main.logIn()">
+        <div class="form-group">
+          <p>Email Address:</p>
+          <input type="email" name="emailAddress" class="form-control" id="emailAddress" placeholder="" ng-model="main.logInInfo.email">
+
+        </div>
+        <div class="form-group">
+          <p>Password:</p>
+          <input type="password" name="password" class="form-control" id="password" placeholder="" ng-model="main.logInInfo.password">
+
+        </div>
+        <center>
+        <button id="secondaryButton" type="submit">Submit</button>
+      </center>
+      </form>
+  </modal-dialog>
   <div class="row">
     <div class="col-md-1">
     </div>
     <div class="col-md-2" id="signUp">
-      <center><a href="#">Sign Up</a></center>
+      <center><a ng-click="main.toggleModal()">Sign Up</a></center>
     </div>
     <div class="col-md-6">
       <p class="subtitle">Discover everything you want to know about a destination, all in one place.</p>
       <!-- <p class="subtitle">More about looking, less about booking.</p> -->
     </div>
     <div class="col-md-2" id="logIn">
-      <center><a href="#">Log In</a></center>
+      <center><a ng-click="main.toggleModal2()">Log In</a></center>
     </div>
     <div class="col-md-1">
     </div>
@@ -44,6 +82,8 @@
     </div>
   </div>
 </center>
+
+
 
   <!-- <div class="sunGlow" style="overflow-x: hidden; overflow-y: hidden; opacity: 1; "></div> -->
 </div>

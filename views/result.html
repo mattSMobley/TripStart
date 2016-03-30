@@ -3,8 +3,12 @@
   <div class="col-md-12">
     <div class="row">
       <center>
-        <h3><a href="#/" class="resultTopLinks">Home</a> | <a href="#/user" class="resultTopLinks">Favorites</a></h3>
+        <h3><a href="#/" class="resultTopLinks">Home</a> <a href="#/user" class="resultTopLinks" ng-if="main.loggedIn">Starred</a></h3>
       </center>
+      <div id="starSave">
+        <h3><a ng-click="result.toggleSave()" show="result.save"><i class="fa fa-star"></i></a><a ng-click="result.toggleSave()" show="!result.save"><i class="fa fa-star-o"></i>
+        </a>
+      </div>
     </div>
     <!-- LEFT COLUMN -->
     <div class="col-md-3">
@@ -114,7 +118,7 @@
         </div>
         <div class="col-md-6 tempBox">
             <div class="row">
-              <p class="infoSection"> <img style="width: 2.5vw; height: 4.5vh; padding-bottom: .5vh;" ng-src={{result.weather.current.condition.icon}}> {{ result.weather.current.condition.text}} </p>
+              <p class="infoSection"> <img style="width: 1.5em; height: 1.5em;" ng-src={{result.weather.current.condition.icon}}> {{ result.weather.current.condition.text}} </p>
             </div>
             <div class="row">
               <p class="infoSection" id="weather">  {{ result.weather.current.temp_f }} °F</p>
@@ -154,7 +158,7 @@
         <!-- <div class="box"> -->
 <center>
 <!-- <div id="snippet_searchpanel" style="width: auto; height:auto;"></div> -->
- <iframe id="QuickTripWidget" allowTransparency="true" src="http://www.quicktrip.com/quicktrip-widget.html?Affiliate=48bdd172-f175-4aca-ab9f-079cbbd8f61a&Mode=flight&Culture=en-CA" width="308" height="250" scrolling="no" frameBorder="0" style="box-shadow: 2px 2px 4px black; border-radius: 5%; margin-left:0"></iframe>
+ <iframe id="QuickTripWidget" allowTransparency="true" src="http://www.quicktrip.com/quicktrip-widget.html?Affiliate=48bdd172-f175-4aca-ab9f-079cbbd8f61a&Mode=flight&Culture=en-CA" width="100%" height="240" frameBorder="0"></iframe>
 </center>
         <!-- </div> -->
       </div>
