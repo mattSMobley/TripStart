@@ -121,8 +121,10 @@ function ResultController(search, weatherService, userSaves, logInService, $http
   console.log(result.logInService.logInInfo);
 
   result.save = false;
+  result.unsave = true;
   result.toggleSave = function(){
-    result.save = !result.save
+    result.save = !result.save;
+    result.unsave = !result.unsave;
   }
 
 
