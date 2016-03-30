@@ -3,11 +3,13 @@
   <div class="col-md-12">
     <div class="row">
       <center>
-        <h3><a href="#/" class="resultTopLinks">Home</a> | <a href="#/user" class="resultTopLinks">Starred</a></h3>
+        <h3><a href="#/" class="resultTopLinks">Home</a> | <a href="#/user" class="resultTopLinks" ng-if="result.logInService.loggedIn == undefined">Starred</a></h3>
       </center>
       <div id="starSave">
-        <h3><a ng-click="result.toggleSave()" show="result.save"><i class="fa fa-star"></i></a><a ng-click="result.toggleSave()" show="result.unsave"><i class="fa fa-star-o"></i>
-        </a>
+        <h3>
+        <a ng-click="result.toggleSave()" ng-show="result.save == true"><i class="fa fa-star"></i></a>
+        <a ng-click="result.toggleSave()" ng-show="result.save == false"><i class="fa fa-star-o"></i></a>
+        </h3>
       </div>
     </div>
     <!-- LEFT COLUMN -->
@@ -154,11 +156,11 @@
           <p class="infoSection" id="flights">Reservations</p>
         </center>
       </div>
-      <div class="row img-responsive" style="padding-left: 1.5em;">
+      <div class="row img-responsive" style="padding-left: .5em;">
         <!-- <div class="box"> -->
 <center>
 <!-- <div id="snippet_searchpanel" style="width: auto; height:auto;"></div> -->
- <iframe id="QuickTripWidget" allowTransparency="true" src="http://www.quicktrip.com/quicktrip-widget.html?Affiliate=48bdd172-f175-4aca-ab9f-079cbbd8f61a&Mode=flight&Culture=en-CA" width="100%" height="240" frameBorder="0"></iframe>
+ <iframe id="QuickTripWidget" allowTransparency="true" src="http://www.quicktrip.com/quicktrip-widget.html?Affiliate=48bdd172-f175-4aca-ab9f-079cbbd8f61a&Mode=flight&Culture=en-CA" width="320" height="240" frameBorder="0"></iframe>
 </center>
         <!-- </div> -->
       </div>
