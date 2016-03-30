@@ -100,6 +100,7 @@ p {
   text-align: center;
   color: #95C2FC;
   font-size: 1.5em;
+  cursor: pointer;
 }
 #logIn a:hover {
   color: white;
