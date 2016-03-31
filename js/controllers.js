@@ -247,9 +247,7 @@ function ResultController(search, weatherService, userSaves, logInService, $http
   var request = {
     location: currentCity,
     radius: 20000,
-    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino', 'airport', 'cafe', 'restaurant', 'movie_theater', 'hospital', 'university', 'hotel'],
-    styles: {"featureType": "poi",
-      stylers: [{"visibility": "off"}]}
+    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino', 'airport', 'cafe', 'restaurant', 'movie_theater', 'hospital', 'university', 'hotel']
   };
 
 
@@ -335,7 +333,8 @@ function callback(results, status) {
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
-      icon: iconUrl
+      icon: iconUrl,
+      types: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino', 'airport', 'cafe', 'restaurant', 'movie_theater', 'hospital', 'university', 'hotel']
     });
     infoWindow = new google.maps.InfoWindow();
 
