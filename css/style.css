@@ -53,6 +53,15 @@ p {
   top: 0;
   right: 0;
 }
+#stars {
+  color: gold;
+  font-size: 1.25em;
+}
+#stars:hover {
+  cursor: pointer;
+}
+
+
 #mainSearchButton:hover {
   background-color: #1556AB;
   border: 1px solid #878787;
@@ -72,8 +81,8 @@ p {
   box-shadow: 2px 2px 4px black;
 }
 #QuickTripWidget {
-  height: 17em;
-  width: 20em;
+  height: 17.5em;
+  width: 23em;
   border-radius: 5%;
   box-shadow: 2px 2px 4px black;
 }
@@ -246,7 +255,7 @@ table{
   line-height: 2;
 }
 
-#saveRepeate {
+#saveRepeat{
   color: orange;
 
 }

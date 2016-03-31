@@ -225,20 +225,6 @@ function ResultController(search, weatherService, userSaves, logInService, $http
 
   var centerLatlng = new google.maps.LatLng(result.latParsed, result.lonParsed);
 
-  var mapStyles = [{
-    "featureType": "all",
-    "elementType": "all",
-    "stylers": [{
-      "visibility": "off"
-    }]
-  }, {
-    "featureType": "poi.attraction",
-    "elementType": "labels",
-    "stylers": [{
-      "visibility": "on"
-    }]
-  }];
-
   var satelliteOptions = {
       zoom: 18,
       center: new google.maps.LatLng(result.latParsed, result.lonParsed),
@@ -261,9 +247,11 @@ function ResultController(search, weatherService, userSaves, logInService, $http
   var request = {
     location: currentCity,
     radius: 20000,
-    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino']
+    type: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino', 'airport', 'cafe', 'restaurant', 'movie_theater', 'hospital', 'university', 'hotel'],
+    styles: {"featureType": "poi",
+      stylers: [{"visibility": "off"}]}
   };
-  console.log(request);
+
 
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
@@ -271,25 +259,88 @@ function ResultController(search, weatherService, userSaves, logInService, $http
 }
 
 function callback(results, status) {
+      console.log(results);
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
       createMarker(results[i]);
     }
   }
-  var icon = new google.maps.MarkerImage("http://www.google.com/mapfiles/marker.png", null, null, new google.maps.Point(41, 47));
+  // var icon = new google.maps.MarkerImage("http://www.google.com/mapfiles/marker.png", null, null, new google.maps.Point(41, 47));
 
   function createMarker(place) {
     var placeLoc = place.geometry.location;
+
+
+    var iconUrl;
+    switch (place.types[0]) {
+    case 'park':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon12.png";
+        break;
+    case 'natural_feature':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal3/icon29.png";
+        break;
+    case 'aquarium':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon10.png";
+        break;
+    case 'amusement_park':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon10.png";
+        break;
+    case 'museum':
+        iconUrl = 'http://maps.google.com/mapfiles/kml/pal2/icon10.png'
+        break;
+    case 'night_club':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon27.png";
+        break;
+    case 'spa':
+        iconUrl = "http://google.com/mapfiles/ms/micons/salon.png";
+        break;
+    case 'stadium':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon57.png";
+        break;
+    case 'shopping_mall':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal3/icon26.png";
+        break;
+    case 'zoo':
+        iconUrl = 'http://maps.google.com/mapfiles/kml/pal3/icon46.png'
+        break;
+    case 'casino':
+        iconUrl = 'http://maps.google.com/mapfiles/kml/pal2/icon59.png'
+        break;
+    case 'airport':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon56.png";
+        break;
+    case 'cafe':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon62.png";
+        break;
+    case 'restaurant':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon63.png";
+        break;
+    case 'movie_theater':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon30.png";
+        break;
+    case 'hospital':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon9.png";
+        break;
+    case 'university':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon63.png";
+        break;
+    case 'hotel':
+        iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon28.png";
+        break;
+    default:
+        iconUrl = "http://www.google.com/mapfiles/marker.png";
+    }
+
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
-      icon: icon
+      icon: iconUrl
     });
     infoWindow = new google.maps.InfoWindow();
 
 
-    google.maps.event.addListener(marker, 'mouseover', function() {
+    google.maps.event.addListener(marker, 'click', function() {
       infoWindow.setContent(place.name + '<br/>' + '<br/><img src="' + place.icon + '">');
       infoWindow.open(map, this);
     });
