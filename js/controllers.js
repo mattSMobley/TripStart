@@ -257,10 +257,10 @@ function ResultController(search, weatherService, userSaves, logInService, $http
 }
 
 function callback(results, status) {
-      console.log(results);
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
+      console.log(results[i].types);
       createMarker(results[i]);
     }
   }
@@ -271,7 +271,8 @@ function callback(results, status) {
 
 
     var iconUrl;
-    switch (place.types[0]) {
+    for (var i = 0; i<place.types.length; i++){
+    switch (place.types[i]) {
     case 'park':
         iconUrl = "http://maps.google.com/mapfiles/kml/pal2/icon12.png";
         break;
@@ -329,12 +330,12 @@ function callback(results, status) {
     default:
         iconUrl = "http://www.google.com/mapfiles/marker.png";
     }
+  }
 
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
-      icon: iconUrl,
-      types: ['park', 'natural_feature', 'aquarium', 'amusement_park', 'museum', 'night_club', 'spa', 'stadium', 'shopping_mall', 'zoo', 'casino', 'airport', 'cafe', 'restaurant', 'movie_theater', 'hospital', 'university', 'hotel']
+      icon: iconUrl
     });
     infoWindow = new google.maps.InfoWindow();
 

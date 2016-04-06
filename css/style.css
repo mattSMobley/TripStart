@@ -118,8 +118,9 @@ p {
 #instagram {
   display: inline-block;
   position: absolute;
-  top: 90%;
-  left: 42%;
+  bottom: 5%;
+  left: 0;
+  right: 0;
   font-size: 1em;
 }
 #instagram a {
