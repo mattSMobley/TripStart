@@ -12,3 +12,8 @@ TripStart is a very simple application. Simply enter the first few letters of th
 ### Work in Progress
 
 TripStart is a work in progress, and therefore will be updated periodically to enhance the information presented to the user. There are several new features in the works, but feel free to leave me any comments you'd like!
+
+
+
+
+You can find the app here: http://tripstart.site
