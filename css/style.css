@@ -93,6 +93,7 @@ p {
   border-radius: 5%;
   box-shadow: 2px 2px 4px black;
 }
+
 /*END GOOGLE MAPS*/
 .ui-menu .ui-menu-item a,.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
 	font-weight: normal;
@@ -189,7 +190,7 @@ p {
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   opacity: .8;
 }
 
@@ -334,4 +335,265 @@ table{
   display: inline-block;
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1400px){
+  #QuickTripWidget {
+    width: 22em;
+    margin-right: -10px;
+  }
+  #forecast table {
+    line-height: 2.6;
+  }
+}
+
+@media (max-width: 1300px) {
+  #QuickTripWidget {
+    width: 20em;
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 1260px) {
+  #QuickTripWidget {
+    width: 20em;
+    margin-right: -50px;
+  }
+  #satellite {
+    margin-right: -30px;
+  }
+}
+
+@media (max-width: 1210px){
+  #QuickTripWidget {
+    width: 19em;
+    margin-right: -70px;
+  }
+  #map {
+    margin-left: -20px;
+  }
+  #forecast {
+    margin-left: -20px;
+  }
+  #photoset {
+    margin-left: -20px;
+  }
+  #satellite {
+    margin-right: -50px;
+  }
+}
+
+@media (max-width: 1150px){
+  #QuickTripWidget {
+    width: 18em;
+    margin-right: -70px;
+  }
+  #map {
+    margin-left: -40px;
+  }
+  #forecast {
+    margin-left: -40px;
+  }
+  #photoset {
+    margin-left: -50px;
+  }
+  #satellite {
+    margin-right: -50px;
+  }
+}
+
+@media (max-width: 1100px){
+  #QuickTripWidget {
+    width: 17.5em;
+    margin-right: -70px;
+  }
+  #map {
+    margin-left: -40px;
+  }
+  #forecast {
+    margin-left: -40px;
+  }
+  #photoset {
+    margin-left: -65px;
+  }
+  #satellite {
+    margin-right: -50px;
+  }
+}
+
+@media (max-width: 1050px){
+  #QuickTripWidget {
+    width: 16.5em;
+    margin-right: -70px;
+  }
+  #map {
+    margin-left: -40px;
+
+  }
+  #forecast {
+    margin-left: -40px;
+  }
+
+  #photoset {
+    margin-left: -95px;
+  }
+  #satellite {
+    margin-right: -50px;
+  }
+}
+
+@media (max-width: 993px){
+  #QuickTripWidget {
+    height: 25em;
+    width: 74%;
+    margin-right: -20px;
+  }
+  #map {
+    height: 25em;
+    width: 70%;
+    margin-left: 0px;
+  }
+  #forecast {
+    height: 25em;
+    width: 70%;
+    margin-left: 0px;
+  }
+  #forecast table {
+    font-size: 2em;
+    line-height: 2;
+  }
+  #forecast tbody tr td{
+    padding-left: .5em;
+  }
+  #forecast th{
+    padding-left: .5em;
+  }
+  #photoset {
+    height: 20em;
+    width: 50%;
+    margin-left: -150px;
+  }
+  #satellite {
+    height: 25em;
+    width: 70%;
+    margin-right: 0px;
+  }
+  .populationBox {
+    padding-top: 10em;
+    padding-bottom: 1em;
+    padding-right: 0em;
+    padding-left: 0em;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .tempBox {
+    padding-bottom: 2em;
+    padding-left: 0em;
+    margin-left: 0em;
+    padding-right: 0em;
+    text-align: center;
+      font-size: 1.5em;
+  }
+}
+
+@media (max-width: 850px){
+  #QuickTripWidget {
+    height: 25em;
+    width: 74%;
+    margin-right: -20px;
+  }
+  #map {
+    height: 25em;
+    width: 70%;
+    margin-left: 0px;
+  }
+  #forecast {
+    height: 25em;
+    width: 70%;
+    margin-left: 0px;
+  }
+  #forecast table {
+    font-size: 1.8em;
+    line-height: 2.1;
+  }
+  #photoset {
+    margin-left: -250px;
+  }
+  #satellite {
+    height: 25em;
+    width: 70%;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 700px){
+#QuickTripWidget {
+  height: 25em;
+  width: 74%;
+  margin-right: -20px;
+}
+#map {
+  height: 25em;
+  width: 70%;
+  margin-left: 0px;
+}
+#forecast {
+  height: 25em;
+  width: 70%;
+  margin-left: 0px;
+}
+#forecast table {
+  font-size: 1.8em;
+  line-height: 2.1;
+}
+#photoset {
+  margin-left: -350px;
+
+}
+.panoramio-wapi-photo {
+  width: 200px;
+  height: 120px;
+}
+#satellite {
+  height: 25em;
+  width: 70%;
+  margin-right: 0px;
+}
+}
+
+@media (max-width: 575px){
+  #QuickTripWidget {
+    height: 22em;
+    width: 100%;
+    margin-right: -20px;
+  }
+  #map {
+    height: 22em;
+    width: 90%;
+    margin-left: 0px;
+  }
+  #forecast {
+    height: 22em;
+    width: 90%;
+    margin-left: 0px;
+  }
+  #forecast table {
+    font-size: 1em;
+    line-height: 2.1;
+  }
+  #photoset {
+    height: 20em;
+    width: 40%;
+  }
+  #satellite {
+    height: 22em;
+    width: 90%;
+    margin-right: 0px;
+  }
+  .populationBox {
+    padding-top: 12em;
+    padding-bottom: 2em;
+  }
 }
